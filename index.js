@@ -61,6 +61,11 @@ client.on('ready', () => {
     }
 });
 
+client.on('disconnected', (reason) => {
+    console.log('Client was logged out', reason);
+    process.exit();
+});
+
 const commands = {
     'ping': (msg) => msg.reply('pong!'),
     'erika': (msg) => msg.reply('Ya? ada apa?'),
